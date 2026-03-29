@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Настройки</title><link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></head><body>
+<div class="layout">
+<div class="sidebar"><div class="brand">web panel</div><div class="nav">
+<a href="/dashboard" class="">Главная</a>
+<a href="/terminal" class="">Терминал</a>
+<a href="/logs" class="">Логи</a>
+<a href="/settings" class="active">Настройки</a>
+<button id="logoutBtn">Выйти</button>
+</div></div>
+<div class="content">
+<div class="topbar"><div class="page-title">Настройки</div><div class="muted" id="userBox"></div></div>
+
+<div class="grid">
+<div class="card"><div class="muted">Загрузить новый ZIP</div><div class="form-row" style="margin-top:12px;"><input type="file" id="zipFile" accept=".zip"></div>
+<div class="actions"><button id="uploadBtn">Загрузить ZIP</button><button id="applyBtn" class="secondary">Применить последний ZIP</button></div><div id="uploadMsg" class="message"></div></div>
+<div class="card"><div class="muted">Сервис</div><div class="actions" style="margin-top:12px;"><button id="restartPanelBtn">Перезапустить панель</button><button id="clearUploadsBtn" class="secondary">Удалить старые файлы</button></div><div id="serviceMsg" class="message"></div></div>
+</div>
+<div class="card" style="margin-top:16px;"><div class="muted">Загруженные файлы</div><div id="filesBox" class="file-list"></div></div>
+
+</div></div>
+<script src="/js/common.js"></script><script src="/js/layout.js"></script><script src="/js/settings.js"></script>
+</body></html>

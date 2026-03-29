@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Главная</title><link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></head><body>
+<div class="layout">
+<div class="sidebar"><div class="brand">web panel</div><div class="nav">
+<a href="/dashboard" class="active">Главная</a>
+<a href="/terminal" class="">Терминал</a>
+<a href="/logs" class="">Логи</a>
+<a href="/settings" class="">Настройки</a>
+<button id="logoutBtn">Выйти</button>
+</div></div>
+<div class="content">
+<div class="topbar"><div class="page-title">Главная</div><div class="muted" id="userBox"></div></div>
+
+<div class="grid">
+<div class="card"><div class="muted">Статус</div><div id="status" class="value">Загрузка...</div></div>
+<div class="card"><div class="muted">IP сервера</div><div id="ip" class="value">-</div></div>
+<div class="card"><div class="muted">Secret</div><div id="secret" class="value">-</div></div>
+<div class="card"><div class="muted">Tag</div><div id="tag" class="value">-</div></div>
+<div class="card"><div class="muted">Ping</div><div id="ping" class="value">-</div></div>
+</div>
+<div class="card" style="margin-top:16px;">
+<div class="muted">Управление proxy</div>
+<div class="form-row" style="margin-top:12px;"><input id="tagInput" maxlength="32" placeholder="Новый tag (32 hex)"></div>
+<div class="actions"><button id="saveTagBtn">Сохранить tag</button><button id="clearTagBtn" class="secondary">Очистить tag</button><button id="restartBtn" class="secondary">Перезапустить proxy</button></div>
+<div id="message" class="message"></div>
+</div>
+
+</div></div>
+<script src="/js/common.js"></script><script src="/js/layout.js"></script><script src="/js/dashboard.js"></script>
+</body></html>
