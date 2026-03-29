@@ -1,0 +1,15 @@
+const express = require('express');
+const controller = require('../controllers/proxy.controller');
+
+const router = express.Router();
+
+router.get('/status', controller.getStatus);
+router.get('/secret', controller.getSecret);
+router.get('/tag', controller.getTag);
+router.post('/tag', controller.setTag);
+router.delete('/tag', controller.clearTag);
+router.get('/link', controller.getLink);
+router.post('/restart', controller.restartProxy);
+router.post('/uninstall', controller.uninstallProxy);
+
+module.exports = router;
