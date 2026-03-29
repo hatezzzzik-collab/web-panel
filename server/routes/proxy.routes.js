@@ -1,0 +1,10 @@
+const express = require('express');
+const ctl = require('../controllers/proxy.controller');
+const { requireAuth } = require('../middleware/auth.middleware');
+const router = express.Router();
+router.use(requireAuth);
+router.get('/dashboard', ctl.dashboard);
+router.post('/tag', ctl.setTag);
+router.delete('/tag', ctl.clearTag);
+router.post('/restart', ctl.restartProxy);
+module.exports = router;

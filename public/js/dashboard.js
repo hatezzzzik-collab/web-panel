@@ -1,0 +1,6 @@
+const statusEl=document.getElementById('status'), ipEl=document.getElementById('ip'), secretEl=document.getElementById('secret'), tagEl=document.getElementById('tag'), pingEl=document.getElementById('ping'), msgEl=document.getElementById('message');
+async function load(){ try { const d=await api('/api/proxy/dashboard'); statusEl.textContent=d.statusText||'Не работает'; ipEl.textContent=d.ip||'-'; secretEl.textContent=d.secret||'-'; tagEl.textContent=d.tag||'-'; pingEl.textContent=d.ping==null?'-':`${d.ping} ms`; } catch(error){ msg(msgEl,error.message,true);} }
+document.getElementById('saveTagBtn').onclick=async()=>{ try{ await api('/api/proxy/tag',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({tag:document.getElementById('tagInput').value.trim()})}); msg(msgEl,'Tag сохранён'); load(); }catch(error){ msg(msgEl,error.message,true);} };
+document.getElementById('clearTagBtn').onclick=async()=>{ try{ await api('/api/proxy/tag',{method:'DELETE'}); msg(msgEl,'Tag удалён'); load(); }catch(error){ msg(msgEl,error.message,true);} };
+document.getElementById('restartBtn').onclick=async()=>{ try{ await api('/api/proxy/restart',{method:'POST'}); msg(msgEl,'Proxy перезапущен'); setTimeout(load,1200); }catch(error){ msg(msgEl,error.message,true);} };
+load();
