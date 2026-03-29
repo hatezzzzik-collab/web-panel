@@ -7,7 +7,7 @@ set -euo pipefail
 
 APP_NAME="mtproxy-panel"
 APP_DIR="/opt/mtproxy-panel"
-REPO_URL="https://github.com/USERNAME/REPOSITORY.git"
+REPO_URL="https://github.com/hatezzzzik-collab/web-panel.git"
 BRANCH="main"
 PORT="3000"
 PROXY_BIN="/usr/local/bin/proxy"
@@ -99,7 +99,7 @@ download_or_update_project() {
   else
     log "📥 Скачиваю проект из GitHub..."
     rm -rf "$APP_DIR"
-    git clone --branch "$BRANCH" "$REPO_URL" "$APP_DIR" >/dev/null 2>&1 || die "Не удалось скачать проект из GitHub"
+    git clone --branch "$BRANCH" "$REPO_URL" "$APP_DIR" >/dev/null 2>&1 || die "Не удалось скачать проект из GitHub. Проверь, что репозиторий public и REPO_URL указан верно."
     ok "Проект скачан"
   fi
 }
@@ -113,11 +113,11 @@ check_project_files() {
 
 write_env() {
   log "⚙️  Создаю .env..."
-  cat > "$APP_DIR/.env" <<EOF
+  cat > "$APP_DIR/.env" <<EOF2
 PORT=${PORT}
 PROXY_BIN=${PROXY_BIN}
 CONTAINER_NAME=${CONTAINER_NAME}
-EOF
+EOF2
   ok ".env создан"
 }
 
