@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Логи</title><link rel="stylesheet" href="/css/styles.css"></head><body>
+<div class="layout">
+<div class="sidebar"><div class="brand">web panel</div><div class="nav">
+<a href="/dashboard" class="">Главная</a>
+<a href="/terminal" class="">Терминал</a>
+<a href="/logs" class="active">Логи</a>
+<a href="/settings" class="">Настройки</a>
+<button id="logoutBtn">Выйти</button>
+</div></div>
+<div class="content">
+<div class="topbar"><div class="page-title">Логи</div><div class="muted" id="userBox"></div></div>
+
+<div class="card"><div class="actions"><button id="refreshLogsBtn">Обновить</button></div><pre id="logsBox" class="pre">Загрузка...</pre></div>
+
+</div></div>
+<script src="/js/common.js"></script><script src="/js/layout.js"></script><script src="/js/logs.js"></script>
+</body></html>

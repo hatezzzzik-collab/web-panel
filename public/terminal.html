@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Терминал</title><link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css"></head><body>
+<div class="layout">
+<div class="sidebar"><div class="brand">web panel</div><div class="nav">
+<a href="/dashboard" class="">Главная</a>
+<a href="/terminal" class="active">Терминал</a>
+<a href="/logs" class="">Логи</a>
+<a href="/settings" class="">Настройки</a>
+<button id="logoutBtn">Выйти</button>
+</div></div>
+<div class="content">
+<div class="topbar"><div class="page-title">Терминал</div><div class="muted" id="userBox"></div></div>
+
+<div class="card"><p class="muted">Терминал пустой. Вводи данные сам.</p><div id="terminal" class="terminal"></div></div>
+
+</div></div>
+<script src="/js/common.js"></script><script src="/js/layout.js"></script><script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.js"></script><script src="/js/terminal.js"></script>
+</body></html>
